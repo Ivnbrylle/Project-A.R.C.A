@@ -1,4 +1,4 @@
-# Project A.R.C.A. (Anomaly Root-Cause Analysis)
+# Project A.R.C.A. (AI Root-Cause Analysis)
 
 Infrastructure Intelligence & Event-Driven Remediation
 
