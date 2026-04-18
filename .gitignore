@@ -1,0 +1,12 @@
+.terraform/
+*.tfstate
+*.tfstate.backup
+arca_lambda.zip
+terraform.tfvars
+*.log
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+Thumbs.db

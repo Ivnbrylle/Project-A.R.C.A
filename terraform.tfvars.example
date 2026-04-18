@@ -1,0 +1,4 @@
+# Copy this file to terraform.tfvars and set your real Discord webhook URL.
+# Never commit real webhook URLs.
+
+discord_webhook_url = "https://discord.com/api/webhooks/REPLACE_WITH_YOURS"
