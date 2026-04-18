@@ -71,15 +71,15 @@ This project automates the first response loop:
 
 ### One-click Lambda test
 
-Use the payload in [lambda_test_event.json](lambda_test_event.json) as the Lambda test event. It contains a valid CloudWatch Logs `awslogs.data` payload.
+Use the payload in [sample-server-crash-invalid-nginx-config.json](sample-server-crash-invalid-nginx-config.json) as the primary Lambda test event. It contains a valid CloudWatch Logs `awslogs.data` payload.
 
 ### Security incident test
 
-Use a sample security payload to simulate repeated failed access attempts or brute-force activity. This is useful for validating that A.R.C.A. can classify both operational failures and suspicious authentication patterns.
+Use [sample-security-bruteforce.json](sample-security-bruteforce.json) and [sample-security-unauthorized-access.json](sample-security-unauthorized-access.json) to simulate repeated failed access attempts or direct unauthorized access attempts.
 
 ### Other incident tests
 
-You can also generate test payloads for server crashes, connectivity issues, and maintenance events by changing the log messages in the CloudWatch payload before encoding it.
+Use [sample-connectivity-backend-refused.json](sample-connectivity-backend-refused.json) for backend connection issues and [sample-maintenance-disk-full-oom.json](sample-maintenance-disk-full-oom.json) for disk full or out-of-memory conditions.
 
 ### End-to-end EC2 test
 
