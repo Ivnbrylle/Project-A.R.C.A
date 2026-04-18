@@ -6,6 +6,13 @@ Infrastructure Intelligence & Event-Driven Remediation
 
 Project A.R.C.A. is an event-driven root-cause analysis pipeline for EC2-hosted Nginx. It watches CloudWatch logs, sends error snippets to AWS Lambda, asks Amazon Bedrock to infer the likely root cause and fix, and posts the result to Discord.
 
+It is designed to classify four incident families:
+
+- Server Crashes: semicolon errors, config typos, and process failures.
+- Security: brute force, unauthorized access attempts, and suspicious scanning.
+- Connectivity: backend or database connection refused.
+- Maintenance: expired certificates, full disks, and out of memory conditions.
+
 ## Problem
 
 Standard monitoring tools can tell you that something is broken, but not why it broke. That leaves engineers manually searching logs, testing fixes, and increasing mean time to recovery.
@@ -65,6 +72,14 @@ This project automates the first response loop:
 ### One-click Lambda test
 
 Use the payload in [lambda_test_event.json](lambda_test_event.json) as the Lambda test event. It contains a valid CloudWatch Logs `awslogs.data` payload.
+
+### Security incident test
+
+Use a sample security payload to simulate repeated failed access attempts or brute-force activity. This is useful for validating that A.R.C.A. can classify both operational failures and suspicious authentication patterns.
+
+### Other incident tests
+
+You can also generate test payloads for server crashes, connectivity issues, and maintenance events by changing the log messages in the CloudWatch payload before encoding it.
 
 ### End-to-end EC2 test
 

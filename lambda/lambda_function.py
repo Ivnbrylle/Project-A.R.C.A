@@ -32,9 +32,18 @@ def lambda_handler(event, context):
 
         # 3. Construct the Prompt for Nova Micro
         prompt = f"""
-        You are a Senior DevOps Engineer. Analyze the following Nginx error log and provide:
-        1. The Root Cause.
-        2. A single Linux command to fix it.
+        You are a Senior DevOps Engineer and Security Analyst.
+        Analyze the following infrastructure log and classify it into one of these incident families:
+        - Server Crashes: semicolon errors, config typos, process failures.
+        - Security: brute force, unauthorized access attempts, suspicious scanning.
+        - Connectivity: backend or database connection refused.
+        - Maintenance: expired certificates, full disks, out of memory.
+
+        Provide:
+        1. The incident family.
+        2. The Root Cause.
+        3. A single Linux command to fix or mitigate it.
+        4. If it is a security incident, mention the likely attack pattern.
         
         Log: {error_logs}
         
