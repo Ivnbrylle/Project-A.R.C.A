@@ -30,7 +30,7 @@ This project automates the first response loop:
 
 ## Architecture Diagram
 
-<!-- Add architecture diagram here -->
+![Project ARCA Architecture](assets/arca_architecture.png)
 
 ## Tech Stack
 
